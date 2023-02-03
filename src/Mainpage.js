@@ -7,6 +7,9 @@ import Line from "./Line";
 const Mainpage = () => {
   const [game, setGame] = useState("lol");
   const [page, setPage] = useState(1);
+  const lol_pick_audio = new Audio("lol_pick.mp3");
+  const ow_pick_audio = new Audio("ow_pick.mp3");
+  const apex_pick_audio = new Audio("apex_pick.mp3");
 
   const GameSelect = () => {
     return (
@@ -14,7 +17,20 @@ const Mainpage = () => {
         <h2> Welcome to Team Maker! </h2>
         <h3> select game to play</h3>
         <MainBtnArea />
-        <CustomBtn onClick={() => setPage(2)}>선택완료</CustomBtn>
+        <CustomBtn
+          onClick={() => {
+            if (game === "apex") {
+              apex_pick_audio.play();
+            } else if (game === "ow") {
+              ow_pick_audio.play();
+            } else if (game === "lol") {
+              lol_pick_audio.play();
+            }
+            setPage(2);
+          }}
+        >
+          선택완료
+        </CustomBtn>
       </>
     );
   };

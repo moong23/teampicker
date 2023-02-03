@@ -7,6 +7,9 @@ export const Btndiv = styled.div`
   align-items: center;
   justify-content: center;
   background-color: ${(props) => (props.selected ? "skyblue" : "pink")};
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const CustomBtn = styled.button`

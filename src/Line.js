@@ -5,6 +5,8 @@ import { LineContainer, LineDiv, LineInput, RandomBtn } from "./Line.element";
 const Line = () => {
   const [leftname, setLeftName] = useState("");
   const [rightname, setRightName] = useState("");
+  const [randombtnvalue, setRandomBtnValue] = useState("random");
+
   const LeftNameChanged = (e) => {
     setLeftName(e.target.value);
     console.log(e.target.value);
@@ -19,9 +21,20 @@ const Line = () => {
   };
 
   const RandomClicked = () => {
-    alert("랜덤 버튼이 눌렸습니다.");
-    console.log("random clicked");
     Math.random() > 0.5 ? NameChange() : console.log("no change");
+    setTimeout(() => {
+      setRandomBtnValue("3");
+    }, 0);
+    setTimeout(() => {
+      setRandomBtnValue("2");
+    }, 1000);
+    setTimeout(() => {
+      setRandomBtnValue("1");
+    }, 2000);
+    setTimeout(() => {
+      setRandomBtnValue("random");
+    }, 3000);
+    console.log("random clicked");
   };
   return (
     <LineDiv>
@@ -40,7 +53,12 @@ const Line = () => {
           onChange={RightNameChanged}
         />
       </LineContainer>
-      <RandomBtn onClick={RandomClicked}>random</RandomBtn>
+      <RandomBtn
+        onClick={RandomClicked}
+        disabled={randombtnvalue === "random" ? "" : "disabled"}
+      >
+        {randombtnvalue}
+      </RandomBtn>
     </LineDiv>
   );
 };
