@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { LineContainer, LineInput, RandomBtn } from "./Line.element";
+import { LineContainer, LineDiv, LineInput, RandomBtn } from "./Line.element";
 
 const Line = () => {
   const [leftname, setLeftName] = useState("");
@@ -24,7 +24,7 @@ const Line = () => {
     Math.random() > 0.5 ? NameChange() : console.log("no change");
   };
   return (
-    <>
+    <LineDiv>
       <LineContainer>
         <LineInput
           type="text"
@@ -41,7 +41,7 @@ const Line = () => {
         />
       </LineContainer>
       <RandomBtn onClick={RandomClicked}>random</RandomBtn>
-    </>
+    </LineDiv>
   );
 };
 

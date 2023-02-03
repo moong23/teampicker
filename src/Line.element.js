@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+export const LineDiv = styled.div`
+  margin-bottom: 4vh;
+`;
 export const LineContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -9,7 +12,7 @@ export const LineContainer = styled.div`
   color: #e90783;
   font-weight: bold;
   font-size: 20px;
-  margin-bottom: 4vh;
+  margin-bottom: 2vh;
 `;
 
 export const LineInput = styled.input`
