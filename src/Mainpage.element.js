@@ -27,3 +27,15 @@ export const CustomBtn = styled.button`
     transition: 1s;
   }
 `;
+
+export const UserBlock = styled.div`
+  display: flex;
+  min-width: 150px;
+  height: 60px;
+  font-size: 24px;
+  border-radius: 16px;
+  background-color: pink;
+  align-items: center;
+  justify-content: center;
+  margin: 1vh 2vw;
+`;

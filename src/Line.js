@@ -1,8 +1,16 @@
 import { useState } from "react";
 
-import { LineContainer, LineDiv, LineInput, RandomBtn } from "./Line.element";
+import {
+  LineContainer,
+  LineDiv,
+  LineFixBtn,
+  LineH1,
+  LineInput,
+  LineTopDiv,
+  RandomBtn,
+} from "./Line.element";
 
-const Line = () => {
+const Line = ({ name }) => {
   const [leftname, setLeftName] = useState("");
   const [rightname, setRightName] = useState("");
   const [randombtnvalue, setRandomBtnValue] = useState("random");
@@ -38,6 +46,10 @@ const Line = () => {
   };
   return (
     <LineDiv>
+      <LineTopDiv>
+        <LineFixBtn>라인고정</LineFixBtn>
+        <LineH1>{name}</LineH1>
+      </LineTopDiv>
       <LineContainer>
         <LineInput
           type="text"
@@ -53,12 +65,6 @@ const Line = () => {
           onChange={RightNameChanged}
         />
       </LineContainer>
-      <RandomBtn
-        onClick={RandomClicked}
-        disabled={randombtnvalue === "random" ? "" : "disabled"}
-      >
-        {randombtnvalue}
-      </RandomBtn>
     </LineDiv>
   );
 };
